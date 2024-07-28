@@ -1,0 +1,209 @@
+#include <iostream> //including header file
+#include <string>
+
+using namespace std;
+
+struct Customer { // creating a structure
+
+ string name, dob,address,nic;
+ int tp;
+};
+
+void addBalance(float num1,float num2,float num3){ // function definition
+
+    float total;
+    total = num1 + num2 + num3;
+    cout<<"___________________________________________________________________________"<<endl
+    <<" total amount: Rs "<<total<<endl<<endl;
+
+}
+
+struct Bill{ //creating a structure
+
+string cNm,add,dat,eNm;
+int aNumber,id,uni;
+};
+
+void printBill(Bill); // function prototype declaration
+
+
+int main(){
+
+   Customer c[100]; // creating structure array variable
+   Bill b;
+
+   string userName,password,op; // local variables
+   int option;
+   float n1,n2,n3,total;
+
+   cout << " Input User Name & Password" << endl<<endl;
+   cin >> userName >> password;
+
+   if (userName=="ADMIN" , password=="AD106") { //test expression 1
+    cout << "Successfully Login as Admin" << endl<<endl; // statement which is executing if the expression 1 is true
+
+
+   cout <<" Welcome to Admin Menu !!!" <<endl << " Select an option:" <<endl << "               1: Add new account" <<endl
+        << "               2: View Account" <<endl << "               3: Help?" <<endl<<endl;
+        // statement which is executing if the expression 1 is true
+   cin >> option;
+
+
+   switch(option){
+   case 1:
+
+       cout <<"Input Data Accesses Created" <<endl<<endl; // code which is executing if option is equal to case 1
+       for (int counter = 0; counter <100 ; ++ counter){
+
+       cout <<" Customer Name : "; // code which is executing if option is equal to case 1
+       cin >> c [counter].name; // insert data for name
+
+       cout<<" Date of Birth : "; // code which is executing if option is equal to case 1
+       cin>> c [counter].dob; // insert data for dob
+
+       cout<<" Address : "; // code which is executing if option is equal to case 1
+       cin>> c[counter].address; // insert data for address
+
+       cout<<" NIC : "; // code which is executing if option is equal to case 1
+       cin>> c[counter].nic; // insert data for nic
+
+       cout<<" Contact Number : "; // code which is executing if option is equal to case 1
+       cin>> c[counter].tp; // insert data for contact number
+
+       cout<< "..........................................."<<endl<<endl;
+       }
+       break;
+
+
+   case 2 :
+
+       for (int counter = 0; counter<100; ++counter){
+
+       cout <<" Customer Name : "<<endl <<" Date of Birth : "<<endl <<" Address : "<<endl
+       <<" NIC : "<<endl <<" Contact Number : "<< endl<<endl; // code which is executing if option is equal to case 2
+
+       cout<< "..........................................."<<endl<<endl;
+       }
+       break;
+
+
+   case 3 :
+      cout <<" What's New" <<endl <<" About account" <<endl <<" Security" <<endl
+      <<" settings" <<endl<<endl; // code which is executing if option is equal to case 3
+      break;
+
+   default :
+      cout << " Insert Valid Option" <<endl<<endl; //code which is executing if option does not equal to any case
+         }
+
+   }
+
+
+   else if (userName=="EMP" ,password=="EM106"){ // test expression 2
+    cout << "Successfully Login as Employee" <<endl<<endl; // statement which is executing if the expression 2 is true
+
+    cout <<" Welcome to Employee Menu !!!" <<endl << " Select an option:" <<endl
+         << "               1: view an account" <<endl << "               2: print bill" <<endl << "               3: Help?" <<endl<<endl;
+         // statement which is executing if the expression 2 is true
+    cin >> option;
+
+
+    switch(option){
+    case 1:
+
+        for (int counter = 0; counter<100; ++counter){
+
+       cout <<" Customer Name : " <<endl <<" Date of Birth : "<<endl <<" Address : "<<endl
+       <<" NIC : "<<endl <<" Contact Number : "<< endl<<endl; // code which is executing if option is equal to case 1
+
+       cout<< "..........................................."<<endl<<endl;
+       }
+       break;
+
+
+
+    case 2 :
+
+       cout<< " customer Name & ID: "; // code which is executing if option is equal to case 2
+       cin>>b.cNm>>b.id; //insert data for name and id
+
+       cout <<" Account Number: "; // code which is executing if option is equal to case 2
+       cin>>b.aNumber; // insert data  for account number
+
+       cout <<" Address: "; // code which is executing if option is equal to case 2
+       cin>>b.add; // insert data for address
+
+       cout<<" Date: "; // code which is executing if option is equal to case 2
+       cin>>b.dat; // insert data for date
+
+       cout<<" Employee Name: "; // code which is executing if option is equal to case 2
+       cin>>b.eNm; // insert data for employee name
+
+       cout<<" Unit amount: "; // code which is executing if option is equal to case 2
+       cin>>b.uni; // insert data for unit amount
+
+       n3 =b.uni*5; // calculation according to burned points
+
+       cout<<" Arrears to be paid: Rs "; // code which is executing if option is equal to case 2
+       cin>>n1; // insert an amount
+
+       cout<<" Fine Balance: Rs "; // code which is executing if option is equal to case 2
+       cin>>n2; //insert an amount
+
+       cout<<" New Balance: Rs "<<n3 <<endl; // code which is executing if option is equal to case 2
+
+       addBalance(n1,n2,n3); //parameter passing
+
+       void printBill (Bill b);{ // function call with structure variable
+
+       cout<< "Your process will be executed.please wait!!!"<<endl<<endl;
+
+       cout <<" .................... Light UP Electricity corporation ...................."<<endl
+       <<"                       Tel 037-1111000 / 037- 2222000" <<endl<<endl;
+
+       cout<< " customer Name : "<< b.cNm <<endl<< " Customer Id : "<< b.id <<endl<< " Account Number: "<< b.aNumber <<endl
+       << " Address: "<< b.add <<endl<< " Date: "<< b.dat <<endl<< " Employee Name: "<< b.eNm <<endl<<endl<< " Unit amount: "<< b.uni <<endl;
+
+       cout<<"___________________________________________________________________________"<<endl<<endl;
+
+       cout<<" Arrears to be paid: Rs "<< n1 <<endl<< " Fine Balance: Rs "<< n2 <<endl<< " New Balance: Rs "<< n3 <<endl;
+
+       addBalance(n1,n2,n3); //parameter passing
+
+       }
+       break;
+
+
+    case 3 :
+      cout <<" What's New" <<endl <<" About account" <<endl <<" Security" <<endl
+      <<" settings" <<endl<<endl; // code which is executing if option is equal to case 2
+
+      break;
+
+    default :
+      cout << " Insert Valid Option" <<endl<<endl; // code which is executing if option does not equal to any case
+         }
+   }
+
+    else {
+        cout << " Invalid Input" << endl<<endl; // statement which is executing if the all expressions are false
+    }
+
+     cout <<" Select your option to exit in the program....." <<endl << " y: Exit" <<endl << " n: Not Exit" <<endl<<endl; //statement for exit function
+     cin >> op;
+
+     if (op=="y"){ // test expression 1
+     cout << " You are successfully Exit" <<endl<<endl; // statement which is executing if the expression 1 is true
+     }
+
+     else if (op=="n"){ // test expression 2
+       cout << " Option selected" <<endl<<endl; // statement which is executing if the expression 2 is true
+     }
+   else {
+    cout << " choose correct option" << endl<<endl; //statement which is executing if the all expressions are false
+   }
+
+
+    return 0;
+
+} //end of the program
